@@ -15,11 +15,18 @@ class DetailsScreen extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: ColorPalette.secondryColor,
               leading: CircleAvatar(
-                child: Image(
-                  image: NetworkImage(""),
-                ),
+                child: Consumer<MyCounter>(builder: (context, model, child) {
+                  return Image(
+                    fit: BoxFit.fill,
+                    image: NetworkImage("${model.imageController}"),
+                  );
+                }),
               ),
-              title: Text("hi ..."),
+              title: Consumer<MyCounter>(
+                builder: (context, model, child) {
+                  return Text("hi ${model.nameController}");
+                },
+              ),
               actions: [
                 Stack(children: [
                   Icon(Icons.shopping_cart_outlined),
