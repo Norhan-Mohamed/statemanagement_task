@@ -19,29 +19,4 @@ class MyCounter extends ChangeNotifier {
     }
     notifyListeners();
   }
-
-  newName(String value) {
-    nameController = value as TextEditingController;
-    notifyListeners();
-  }
-
-  newEmail(String value) {
-    emailController = value as TextEditingController;
-    notifyListeners();
-  }
-
-  newImage(String value) {
-    imageController = value as TextEditingController;
-    notifyListeners();
-  }
-
-  newPassword(String value) {
-    passwordController = value as TextEditingController;
-    notifyListeners();
-  }
-
-  newNumber(String value) {
-    numberController = value as TextEditingController;
-    notifyListeners();
-  }
 }

@@ -16,20 +16,22 @@ class DetailsScreen extends StatelessWidget {
               backgroundColor: ColorPalette.secondryColor,
               leading: CircleAvatar(
                 child: Consumer<MyCounter>(builder: (context, model, child) {
-                  return Image(
-                    fit: BoxFit.fill,
-                    image: NetworkImage("${model.imageController}"),
+                  return Image.network(
+                    "${model.imageController.text}",
                   );
                 }),
               ),
               title: Consumer<MyCounter>(
                 builder: (context, model, child) {
-                  return Text("hi ${model.nameController}");
+                  return Text("hi ${model.nameController.text}");
                 },
               ),
               actions: [
                 Stack(children: [
-                  Icon(Icons.shopping_cart_outlined),
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 35,
+                  ),
                   Consumer<MyCounter>(builder: (context, mycounter, child) {
                     return Container(
                       height: 15,
@@ -44,6 +46,15 @@ class DetailsScreen extends StatelessWidget {
                     );
                   })
                 ]),
+                IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward_sharp,
+                    color: ColorPalette.primaryColor,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                )
               ],
             ),
             body: Column(children: [
@@ -123,7 +134,7 @@ class DetailsScreen extends StatelessWidget {
                                                 // setState(() {});
                                               },
                                               child: Text(
-                                                'Purchse completed successfuly',
+                                                'Pay ',
                                                 style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight: FontWeight.bold,

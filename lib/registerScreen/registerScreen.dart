@@ -19,10 +19,10 @@ class _MyHomePageState extends State<MyHomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   var myFocus;
-  void initState() {
+  /* void initState() {
     super.initState();
     myFocus = FocusNode();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {

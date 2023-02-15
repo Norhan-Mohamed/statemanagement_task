@@ -29,7 +29,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             title: Consumer<MyCounter>(
               builder: (context, model, child) {
-                return Text("hi ${model.nameController}");
+                return Text("hi ${model.nameController.text}");
               },
             ),
             actions: [
@@ -64,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 20,
                 ),
                 Text(
-                  "Welcome ${model.nameController}\n your email is ${model.emailController}\n your phone number is ${model.numberController}",
+                  "Welcome ${model.nameController.text}\n your email is ${model.emailController.text}\n your phone number is ${model.numberController.text}",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
